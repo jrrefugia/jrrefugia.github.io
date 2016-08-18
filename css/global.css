@@ -1,0 +1,131 @@
+*{
+padding:0px;
+margin:0px;
+font-family:chivo, sans-serif;
+}
+
+body { padding-top: 50px; 
+background-color:#222222;
+}
+
+div#projects{
+
+font-family:chivo, sans-serif;
+font-size:18px;
+}
+
+
+
+
+
+header{
+background-color:#fff;
+height:auto;
+
+}
+
+div#logo{
+font-size:2em;
+font-family: rock-salt, sans-serif;
+text-align:center;
+width:53px;
+height:53px;
+
+}
+div#logo + div{
+position:relative;
+font-size:9px;
+bottom:32px;
+left:1px;
+}
+#logo-container{
+margin-right:20px;
+font-size:13px;
+color:#efefef;
+position:relative;
+top:-5px;
+cursor:pointer;
+}
+
+ 
+footer div{
+
+	padding:20px 0px;
+font-size:12px;
+text-align:center;
+color:#fff;
+}
+
+footer{
+	margin-top:20px;
+clear:both;
+border-top:1px dotted #000;
+background-color:#222;
+}
+
+#projects section img{
+	width:100%;
+	
+	filter: grayscale(100%);
+	margin-bottom:5px;
+	
+	
+}
+#projects section img:hover{
+	filter: grayscale(0%);
+	
+	
+}
+#banner{
+	background-color:#000;
+	}
+#banner p{
+	background-color:#000;
+	width:80%;
+	padding:3% 0 8% 0;
+	margin:0 auto;
+	
+}
+.font-extra-large{
+	font-size:72px;
+}
+.font-large{
+	font-size:20px;
+}
+.font-medium{
+	font-size:15px;
+}
+.font-small{
+	font-size:12px;
+}
+.right{
+	float:right;
+}
+.left{
+	float:left;
+}
+.clear-float{
+	clear:both;
+	
+}
+.center{
+	width:100%;
+	text-align:center;
+	
+	
+}
+
+
+p{
+	color:#d3d3d3;
+	font-size:15px;
+	text-align:justify;
+}
+h3{
+	color:#d3d3d3;
+	margin-bottom:5px;
+	font-family:droid-serif, sans-serif;
+	clear:both;
+}
+
+

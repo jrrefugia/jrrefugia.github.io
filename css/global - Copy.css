@@ -1,0 +1,108 @@
+*{
+padding:0px;
+margin:0px;
+font-family:chivo, sans-serif;
+font-size:18px;
+}
+
+body{background-color:#fff;}
+
+div#projects{
+
+margin:0 auto;
+
+padding:0 20px;
+
+}
+
+
+
+section{
+border:1px solid #ccc;
+height:10px;
+}
+
+
+
+header{
+background-color:#fff;
+height:auto;
+box-shadow:3px 3px 3px 3px #ccc;
+}
+
+header div#logo{
+font-size:2em;
+font-family: rock-salt, sans-serif;
+text-align:center;
+width:80px;
+height:80px;
+
+}
+header div#logo + div{
+position:relative;
+font-size:12px;
+width:80px;
+text-align:right;
+bottom:15px;
+left:1px;
+}
+header #logo-container{
+left:20px;
+position:relative;
+display:inline-block;
+
+}
+
+
+
+header nav{
+display:inline-block;
+position:relative;
+left:577px;
+bottom:20px;
+}
+
+header nav a{
+text-decoration:none;
+margin-right:20px;
+padding: 5px 10px;
+color:#000;
+}
+header nav a:nth-child(3){
+margin-right:0px;
+}
+
+
+div#projects section{
+	height:200px;
+	width:262px;
+	display:inline-block;
+	padding:20px;
+	margin-right:20px;
+vertical-align:top;
+	}
+div#projects section:nth-child(3){
+	
+	margin-right:0px;
+}
+
+div#projects{
+margin:20px 0;
+}
+
+ 
+footer div{
+font-size:12px;
+text-align:center;
+color:#fff;
+}
+
+footer{
+height:200px;
+background-color:#111;
+}
+
+
+.clearfloat{
+clear:both;
+}
