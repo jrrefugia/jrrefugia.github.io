@@ -38,7 +38,7 @@ input {
 </head>
 <body>
 
-<div class="chart" id="graph" data-percent="-24.34"></div>
+<div class="chart" id="graph" data-percent="83.44"></div>
 
 
 <script>
@@ -46,7 +46,7 @@ var el = document.getElementById('graph');
 var options = {
     percent:  el.getAttribute('data-percent') || 0,
     size: el.getAttribute('data-size') || 180,
-    lineWidth: el.getAttribute('data-line') || 15
+    lineWidth: el.getAttribute('data-line') || 25
 }
 var canvas = document.createElement('canvas');
 var span = document.createElement('span');
@@ -65,12 +65,14 @@ var drawCircle = function(color, percent) {
 		ctx.beginPath();
 		ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, percent > 0 ? false : true);
 		ctx.strokeStyle = color;
-        ctx.lineCap = 'round'; // butt, round or square
+        ctx.lineCap = 'butt'; // butt, round or square
 		ctx.lineWidth = options.lineWidth;
 		ctx.stroke();
 };
-drawCircle('#ddd', 100 / 100); 
-drawCircle(options.percent > 0 ? "green" : "red", options.percent / 100);
+drawCircle('#eee', 100 / 100); 
+
+drawCircle(options.percent > 0 ? "#77DD77" : "#FF6961", options.percent / 100);
+drawCircle('#000', .2 / 100); 
 </script>
 
 </body>
