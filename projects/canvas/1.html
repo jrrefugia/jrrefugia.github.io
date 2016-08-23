@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<style>
+div {
+    position:relative;
+    margin:80px;
+    width:220px; height:220px;
+}
+canvas {
+    display: block;
+    position:absolute;
+    top:0;
+    left:0;
+}
+span {
+    color:#555;
+    display:block;
+    line-height:180px;
+    text-align:center;
+    width:180px;
+    font-family:sans-serif;
+    font-size:30px;
+    font-weight:100;
+    margin-left:5px;
+}
+
+input {
+    width: 200px;
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+<div class="chart" id="graph" data-percent="-24.34"></div>
+
+
+<script>
+var el = document.getElementById('graph');
+var options = {
+    percent:  el.getAttribute('data-percent') || 0,
+    size: el.getAttribute('data-size') || 180,
+    lineWidth: el.getAttribute('data-line') || 15
+}
+var canvas = document.createElement('canvas');
+var span = document.createElement('span');
+span.textContent = options.percent + '%';
+if (typeof(G_vmlCanvasManager) !== 'undefined') {
+    G_vmlCanvasManager.initElement(canvas);
+}
+var ctx = canvas.getContext('2d');
+canvas.width = canvas.height = options.size;
+el.appendChild(span);
+el.appendChild(canvas);
+ctx.translate(options.size / 2, options.size / 2); 
+ctx.rotate((-1 / 2 + 0 / 180) * Math.PI);
+var radius = (options.size - options.lineWidth) / 2;
+var drawCircle = function(color, percent) {
+		ctx.beginPath();
+		ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, percent > 0 ? false : true);
+		ctx.strokeStyle = color;
+        ctx.lineCap = 'round'; // butt, round or square
+		ctx.lineWidth = options.lineWidth;
+		ctx.stroke();
+};
+drawCircle('#ddd', 100 / 100); 
+drawCircle(options.percent > 0 ? "green" : "red", options.percent / 100);
+</script>
+
+</body>
+</html>
