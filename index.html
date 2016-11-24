@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--https://edgewebfonts.adobe.com/fonts-->
+<!--https://edgewebfonts.adobe.com/fonts
 <script src="//use.edgefonts.net/rock-salt.js"></script>
 <script src="//use.edgefonts.net/droid-serif.js"></script>
 <script src="//use.edgefonts.net/chivo.js"></script>
 <!--https://edgewebfonts.adobe.com/fonts-->
+
+
 
 <title>Jerie Refugia's adventures on the web.</title>
 
@@ -94,7 +96,13 @@
 
 </div>
 
-
+ <button class="btn btn-success btn-large"
+          id="purchase-button"
+          onclick="ga('send', 'event', {  'eventCategory': 'Purchase actions',  'eventAction': 'Purchase'});">
+			  
+    Get it now!
+  </button>
+  
 
 <footer class="col-md-12">
 <div>&copy; 2015 Jerie Refugia. All Rights Reserved.</div>
@@ -104,6 +112,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="./js/easyab.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script>
 $(document).ready(function(){
@@ -144,6 +153,31 @@ function RGB2Color(r,g,b){
 
 
 
+  $('.book-adjective').easyab({
+    'slot': 1,
+    'name': 'gs-book-adjective',
+    'alternatives': [{
+      'alternative': 'award winning'
+    }]
+  });
+
+  $('#purchase-button').easyab({
+    'slot': 2,
+    'name': 'gs-purchase-button',
+    'alternatives': [{
+      'alternative':
+        function($this) {
+          $this
+            .removeClass('btn-success')
+            .addClass('btn-primary');
+        }
+    }]
+  });
+
+
+
+
+
 });
 </script>
 <script>
@@ -155,6 +189,7 @@ function RGB2Color(r,g,b){
   ga('create', 'UA-24324630-2', 'auto');
   ga('send', 'pageview');
 
+  
 </script>
 </body>
 </html>
