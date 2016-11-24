@@ -110,8 +110,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 </div>
 
  <button class="btn btn-success btn-large"
-          id="purchase-button"
-          onclick="ga('send', 'event', {  'eventCategory': 'Purchase actions',  'eventAction': 'Purchase'});">
+          id="purchase-button">
 
 			  
     Get it now!
@@ -171,7 +170,21 @@ function RGB2Color(r,g,b){
     'slot': 1,
     'name': 'gs-book-adjective',
     'alternatives': [{
-      'alternative': 'award winning'
+      'alternative': function($this) {
+          $this
+            .removeClass('btn-success')
+            .addClass('btn-primary');
+			
+			console.log("sdf");
+			
+			
+			$this.on("click",function(){
+				ga('send', 'event', {  'eventCategory': 'Purchase actions',  'eventAction': 'Purchase', 'eventLabel':'green'});
+			});
+			
+			
+			
+        }
     }]
   });
 
@@ -186,6 +199,14 @@ function RGB2Color(r,g,b){
             .addClass('btn-primary');
 			
 			console.log("sdf");
+			
+			
+			$this.on("click",function(){
+				ga('send', 'event', {  'eventCategory': 'Purchase actions',  'eventAction': 'Purchase', 'eventLabel':'blue'});
+			});
+			
+			
+			
         }
     }]
   });
