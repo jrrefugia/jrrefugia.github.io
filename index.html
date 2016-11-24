@@ -167,7 +167,7 @@ function RGB2Color(r,g,b){
 
 
   $('#purchase-button').easyab({
-    'slot': 2,
+    'slot': 1,
     'name': 'gs-purchase-button',
     'alternatives': [{
       'alternative':
@@ -185,7 +185,24 @@ function RGB2Color(r,g,b){
 			
 			
         }
-    }]
+    },
+	{
+      'alternative':
+        function($this) {
+	
+			
+			$this.on("click",function(){
+				ga('send', 'event', {  'eventCategory': 'Purchase actions',  'eventAction': 'Purchase', 'eventLabel':'green'});
+			});
+			
+			console.log($this);
+			
+			
+        }
+    }
+	
+	
+	]
   });
 
 
