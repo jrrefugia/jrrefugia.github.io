@@ -172,16 +172,14 @@ function RGB2Color(r,g,b){
     'alternatives': [{
       'alternative':
         function($this) {
-          $this
-            .removeClass('btn-success')
-            .addClass('btn-primary');
+          $this.removeClass('btn-success').addClass('btn-primary');
 			
 			
 			$this.on("click",function(){
 				ga('send', 'event', {  'eventCategory': 'Purchase actions',  'eventAction': 'Purchase', 'eventLabel':'blue'});
 			});
 			
-			console.log($this);
+	
 			
 			
         }
@@ -195,7 +193,7 @@ function RGB2Color(r,g,b){
 				ga('send', 'event', {  'eventCategory': 'Purchase actions',  'eventAction': 'Purchase', 'eventLabel':'green'});
 			});
 			
-			console.log($this);
+		
 			
 			
         }
