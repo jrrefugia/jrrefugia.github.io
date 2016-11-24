@@ -115,6 +115,9 @@
 <script src="./js/easyab.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script>
+
+var gaq = "sdf";
+
 $(document).ready(function(){
 var rainbowHoverInterval, rainbowHoverCounter = 0, rainbowHoverToggle = false;
 $("#logo-container").hover(function(){
@@ -150,21 +153,20 @@ function colorElement(selector,modifier){
 function RGB2Color(r,g,b){
     return 'rgb(' + Math.round(r) + ',' + Math.round(g) + ',' + Math.round(b) + ')';
 }
-/*
- $this.addClass('btn-primary');
- 
-$this.on("click",function(){
+
+
+if((Math.floor(Math.random() * 2)) % 2 == 0){
+
+$("#purchase-button").addClass('btn-primary');
+$("#purchase-button").on("click",function(){
 				ga('send', 'event', {  'eventCategory': 'Purchase actions',  'eventAction': 'Purchase', 'eventLabel':'blue'});
 			});
-	$this.addClass('btn-success');
-			
-			$this.on("click",function(){
+}else{
+$("#purchase-button").addClass('btn-success')
+$("#purchase-button").on("click",function(){
 				ga('send', 'event', {  'eventCategory': 'Purchase actions',  'eventAction': 'Purchase', 'eventLabel':'green'});
 			});
-	*/		
-
-
-
+}
 
 
 
