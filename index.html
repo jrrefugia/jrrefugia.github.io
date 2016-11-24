@@ -166,28 +166,6 @@ function RGB2Color(r,g,b){
 
 
 
-  $('.book-adjective').easyab({
-    'slot': 1,
-    'name': 'gs-book-adjective',
-    'alternatives': [{
-      'alternative': function($this) {
-          $this
-            .removeClass('btn-success')
-            .addClass('btn-primary');
-			
-			console.log("sdf");
-			
-			
-			$this.on("click",function(){
-				ga('send', 'event', {  'eventCategory': 'Purchase actions',  'eventAction': 'Purchase', 'eventLabel':'green'});
-			});
-			
-			
-			
-        }
-    }]
-  });
-
   $('#purchase-button').easyab({
     'slot': 2,
     'name': 'gs-purchase-button',
@@ -198,13 +176,12 @@ function RGB2Color(r,g,b){
             .removeClass('btn-success')
             .addClass('btn-primary');
 			
-			console.log("sdf");
-			
 			
 			$this.on("click",function(){
 				ga('send', 'event', {  'eventCategory': 'Purchase actions',  'eventAction': 'Purchase', 'eventLabel':'blue'});
 			});
 			
+			console.log($this);
 			
 			
         }
