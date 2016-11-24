@@ -172,7 +172,7 @@ function RGB2Color(r,g,b){
     'alternatives': [{
       'alternative':
         function($this) {
-          $this.removeClass('btn-success').addClass('btn-primary');
+          $this.addClass('btn-primary');
 			
 			
 			$this.on("click",function(){
@@ -187,7 +187,7 @@ function RGB2Color(r,g,b){
 	{
       'alternative':
         function($this) {
-	
+			$this.addClass('btn-success');
 			
 			$this.on("click",function(){
 				ga('send', 'event', {  'eventCategory': 'Purchase actions',  'eventAction': 'Purchase', 'eventLabel':'green'});
