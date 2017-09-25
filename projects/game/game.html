@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jerie's game</title>
+<style>
+
+</style>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<link type="text/css" href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet"></link>
+<link type="text/css" href="styles.css" rel="stylesheet"></link>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+<img src="landscape.jpg" id="landscape" style="display:none;" />
+<div id="ui-container">
+	<div class="row ui-heading">
+		<div class="ui-titles col-3" id="power">Power <br><div class="ui-components" id="bulletTimeGauge"></div></div>
+		<div class="ui-titles col-3" id="score">Score <br><div class="ui-components " id="playerScore"></div></div>
+		<div class="ui-titles col-3" id="health">Health <br><div class="ui-components " id="playerHealthBar"></div></div>
+	</div>
+	<div style="color:white; padding:10px;">
+	left-click to destroy<br>right-click for shields<br>left and right click for power mode?<br>this is a realllllly rough copy. also you can't lose.
+	</div>
+	<!--div class="row">
+		<div class="col-9 level-menu">
+			<div class="row" id="level-heading">Levels</div>
+			<div id="level-container">
+				<div class="row">
+					<a href="#"><div class="levels lvl-col-3">1</div></a><a href="#"><div class="levels lvl-col-3">2</div></a><a href="#"><div class="levels lvl-col-3">3</div></a>
+				</div>
+				<div class="row">
+					<a href="#"><div class="levels lvl-col-3">4</div></a><a href="#"><div class="levels lvl-col-3">5</div></a><a href="#"><div class="levels lvl-col-3">6</div></a>
+				</div>
+			</div>
+		</div>
+	</div-->
+</div>
+<div id="coords" style="color:white"></div>
+</body>
+<script src="GameObject.js"></script>
+<script src="Enemy.js"></script>
+<script src="Bullet.js"></script>
+<script src="Particle.js"></script>
+<script src="draw.js"></script>
+<script src="event.js"></script>
+<script src="player.js"></script>
+<script src="spawn.js"></script>
+<script src="helper.js"></script>
+<script src="ui.js"></script>
+<script>
+// globals
+var canvas = $("#canvas").get(0);
+var ctx = canvas.getContext("2d");
+var currentMousePos = { x: 0, y: 0};
+var prevMousePos = { x:0, y: 0 };
+var backgroundImageStart1 = 0;
+var backgroundImageStart2 = 0;
+var progress = 0;
+var globalSpeedModifier = 1;
+var objectsOnScreen = 0;
+var enemyThisRound = 0;
+var enemyOnScreen = 0;
+var enemyMaxThisRound = 10000;
+var enemyMaxOnScreen = 2;
+
+//player vars
+var bulletTimeGauge = 100;
+var playerColor = "white";
+var playerSize = 5;
+var playerPoweredSize = 70;
+var playerHealth = 100;
+var playerScore = 0;
+var lastClick = {x:0,y:0};
+var leftClickPressed = false;
+var rightClickPressed = false;
+var middleClickPressed = false;
+
+
+//registers
+var registers = ["enemyRegister","bulletRegister","particleRegister"];
+var enemyRegister = {};
+var bulletRegister = {};
+var particleRegister = {};
+
+function update(progress) {
+	//ctx.clearRect(0,0,canvas.width,canvas.width);
+	//spawn
+	if(progress%1 == 0 && (!leftClickPressed || !rightClickPressed)){
+		spawn(); //disable spawn during powermode
+	}
+	//draw order
+	drawLandscape();
+	drawRegisterObjects();
+	drawPlayerShields(progress);
+	drawPlayerTrail(progress * globalSpeedModifier);
+	
+	//player functions
+	updatePlayer();
+	
+	//ui changes
+	updateUI();
+	
+}
+
+function loop() {
+	if(progress%2 == 0){update(progress);}
+	
+	drawPlayer();//reduce lag when player is moving mouse
+	progress++;
+	requestAnimationFrame(loop);
+};
+
+function start(){
+loop();
+}
+
+</script>
+</html>
+
+
