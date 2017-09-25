@@ -6,21 +6,6 @@ $(document).ready(function() {
 			var timelineEvents = timeline[$(this).attr("id")];
 			var maxYear = 0;
 			var minYear = 99999;
-			var yearList = {};
-			for (index in timelineEvents) {
-				var event = timelineEvents[index];
-				var year = Number(event.date.substr(0, 4));
-				if (typeof yearList[year] == "undefined") {
-					yearList[year] = [];
-				}
-				yearList[year].push(event);
-				if (year > maxYear) {
-					maxYear = year;
-				}
-				if (year < minYear) {
-					minYear = year;
-				}
-			}
 			var segmentInterval = 5;
 			var segmentPerYear = 1;
 			var showMonths = false;
@@ -28,8 +13,19 @@ $(document).ready(function() {
 			var distanceBetweenPoints = 15;
 			var distanceFromTimeline = 8;
 			var spanInYearCounterMax = 0;
-			var timelineSegmentWidthMax = 13;
+			var timelineSegmentWidthMax = 13;			
+			var yearList = {};
 			
+			for (index in timelineEvents) {
+				var event = timelineEvents[index];
+				var year = Number(event.date.substr(0, 4));
+				if (typeof yearList[year] == "undefined") {
+					yearList[year] = [];
+				}
+				yearList[year].push(event);
+				maxYear = year > maxYear ? year : maxYear;
+				minYear = year < minYear ? year : minYear;
+			}
 			var timelineConfig = timeline[$(this).attr("id") + "-config"];
 			if (timelineConfig) {
 				monthlySegmentationThreshold = timelineConfig.monthlySegmentation ? (maxYear - minYear + 1) : monthlySegmentationThreshold;
@@ -38,9 +34,7 @@ $(document).ready(function() {
 				segmentInterval = 12;
 				segmentPerYear = 12;
 				maxYear = maxYear + 1;
-				if (maxYear - minYear < 2) {
-					showMonths = true;
-				}
+				showMonths = maxYear - minYear < 2 ? true : false;
 			} else {
 				maxYear = Math.ceil(maxYear / segmentInterval) * segmentInterval;
 				minYear = Math.floor(minYear / segmentInterval) * segmentInterval;
@@ -56,16 +50,7 @@ $(document).ready(function() {
 						var event = thisYear[index];
 						currentYear = Number(event.date.substr(0, 4));
 						currentMonth = Number(event.date.substr(4, 2));
-						var timeMatch = false;
-						if (segmentPerYear == 12) {
-							if (Math.floor(minYear + (i / segmentPerYear)) == currentYear && (i % segmentPerYear) + 1 == currentMonth) {
-								timeMatch = true;
-							}
-						} else {
-							if (Math.floor(minYear + (i / segmentPerYear)) == currentYear) {
-								timeMatch = true;
-							}
-						}
+						var timeMatch = segmentPerYear == 12 ? ((Math.floor(minYear + (i / segmentPerYear)) == currentYear && (i % segmentPerYear) + 1 == currentMonth) ? true : false) : ((Math.floor(minYear + (i / segmentPerYear)) == currentYear) ? true : false);
 						if (timeMatch) {
 							spanInYearCounter++;
 							dataSpanString += '<span class="data" style="top:' + (-distanceFromTimeline - (distanceBetweenPoints * spanInYearCounter)) + 'px" title="' + event.heading + '" rel="' + event.text + '"></span>';
@@ -95,11 +80,7 @@ $(document).ready(function() {
 			timelineSegmentWidth = timelineSegmentWidth < timelineSegmentWidthMax ? timelineSegmentWidthMax : timelineSegmentWidth; /*limit resize of segments*/
 			$(this).find(".timelineSegment").not(".first").css("width", timelineSegmentWidth + "px").find("span.filler").css("width", timelineSegmentWidth + "px");
 			$(this).css("top", (spanInYearCounterMax * distanceBetweenPoints) + distanceFromTimeline + "px").css("marginBottom", (spanInYearCounterMax * distanceBetweenPoints) + distanceFromTimeline + "px");
-			if (showMonths) {
-				showMonths = " showMonths";
-			} else {
-				showMonths = "";
-			}
+			showMonths = showMonths ? " showMonths" : "";
 			$(this).wrap('<div class="timelineContainer' + showMonths + '"></div>');
 		});
 	}
