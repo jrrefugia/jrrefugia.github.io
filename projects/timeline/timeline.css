@@ -1,0 +1,119 @@
+.timelineContainer {
+	overflow-y: hidden;
+	overflow-x: auto;
+	width: inherit;
+	margin-top: 20px;
+}
+
+.timeline {
+	width: inherit;
+	height: 40px;
+	position: relative;
+	white-space: nowrap;
+}
+
+.timelineSegment {
+	display: inline-block;
+	width: 30px;
+	vertical-align: top;
+	border-right: 1px #ADAFB1 solid;
+	position: relative;
+}
+
+.timelineSegment.minor,
+.timelineSegment.major span.filler {
+	height: 7px;
+	background-color: #FCF7D3;
+}
+
+.timelineSegment.major span.filler {
+	display: block;
+}
+
+.timelineSegment.major {
+	height: 20px;
+	border-right: 1px #ADAFB1 solid;
+}
+
+.timelineSegment.first {
+	width: 0px;
+}
+
+.timelineSegment span.label {
+	position: absolute;
+	top: 20px;
+	font-size: 11px;
+	font-family: arial;
+	font-weight: bold;
+	color: #77787B;
+}
+
+.timelineSegment.minor span.label,
+.timelineSegment.major span.label>span {
+	display: none;
+}
+
+.timelineContainer.showMonths .timelineSegment.minor span.label,
+.timelineContainer.showMonths .timelineSegment.major span.label>span {
+	top: 8px;
+	font-weight: normal;
+	font-size: 10px;
+	display: block;
+	background-color: #fff;
+}
+
+.timelineContainer.showMonths .timelineSegment.major span.label {
+	top: 9px;
+}
+
+.timelineContainer.showMonths .timelineSegment.major.first span.label {
+	text-align: left;
+}
+
+.timelineContainer.showMonths .timelineSegment.major.last span.label {
+	text-align: right;
+}
+
+.timelineSegment span.data {
+	position: absolute;
+	height: 12px;
+	width: 12px;
+	background-color: #D84D53;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+/*tooltip stuff*/
+
+.timelineTooltip {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 1px dotted #3fb29c;
+	border-radius: 0;
+	box-shadow: 2px 2px 6px #efefef;
+	color: #555;
+	display: none;
+	font-size: 13px;
+	line-height: 1.4em;
+	width: 200px;
+	padding: 10px;
+	font-family: arial;
+}
+
+.timelineTooltip h4 {
+	background: none repeat scroll 0 0 #FFFFFF;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 5px;
+	padding-bottom: 0;
+	margin: 0;
+}
+
+.timelineTooltip p {
+	margin: 0;
+}
+
+.timeline-legend {
+	font-style: italic;
+	color: #666;
+	font-size: 12px;
+}

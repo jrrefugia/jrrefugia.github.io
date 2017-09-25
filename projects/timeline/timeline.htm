@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://www.bls.gov/javascripts/jquery-1.11.0.min.js"></script>
+    <script src="https://www.bls.gov/javascripts/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://www.bls.gov/javascripts/jquery-tools-1.2.7.min.js"></script>
+    <script src="timeline.json.js"></script>
+    <script src="timeline.js"></script>    
+	<link type="stylesheet" href="timeline.css" />
+</head>
+
+<body>
+    <div>
+        <h2>Timeline</h2>
+        <p>Tooltips will now stay within the container of the timeline:</p>
+
+        <div class="timeline" id="timeline1"></div>
+    </div>
+    <div style="width:710px;">
+        <p>This is the normal width of the page. Month labels will now show up for timelines that are less than 1 year:</p>
+        <div class="timeline" id="timeline2"></div>
+        <p>Month labels will disappear after a year because there is just too much clutter. However, the timeline will still be segmented by month.</p>
+        <div class="timeline" id="timeline3"></div>
+        <p>Monthly segmentation will continue to occur until timeline date range goes beyond 4 years. At that point, the timeline will go back to it's default behavior, segmenting every year, padding to the nearest year divisible by 5. The timeline below has the same event data as the first timeline on this page, except for one event that makes the date range greater than 4. Note: 4 is a magic number setting it any higher causes the timeline to get wider than its container forcing the user to scroll horizontally:</p>
+        <div class="timeline" id="timeline4"></div>
+        <p>This is what [bls program] would look like on prod. It has more than 4 years, so it will default to the original behavior:</p>
+        <div class="timeline" id="timeline5"></div>
+        <p>If [bls program] didn't have that last event it would be in the 4 year range so it would look like this. Notice at the 4 year mark, we're already pushing the limits of the timeline. The segment spacing is at its limit to fit the dots. If we go beyond the 4 year mark this will force the timeline to get wider, thus forcing users to scroll horizontally.</p>
+        <div class="timeline" id="timeline6"></div>
+        <p>This version of the code also fixes a performance issue with one of the functions I was executing so we should no longer be seeing frozen javascript errors.</p>
+    </div>
+
+</body>
+
+</html>
