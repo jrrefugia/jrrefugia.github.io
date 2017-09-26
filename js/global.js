@@ -7,7 +7,7 @@ colorElement("#banner p",rainbowHoverCounter);rainbowHoverCounter = rainbowHover
 }
 $("#logo-container").click(function(){
 //rainbowHoverToggle = rainbowHoverToggle == true ? false : true;
-window.location = "home.html";
+window.location = "/index.html";
 });
 
 }, function(){
