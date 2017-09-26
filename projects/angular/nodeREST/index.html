@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>Jerie's App</title>
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+	<script src="app.js"></script>
+</head>
+<body ng-app="jerieApp">
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+		<ui-view></ui-view>
+		</div>
+	</div>
+  
+  
+	<script type="text/ng-template" id="/home.html">
+		<div class="page-header">
+			<h1>Jerie's customer app</h1>
+		</div>
+		
+		<table style="width:100%">
+		<thead>
+		<tr><th>name</th><th>purchases</th><th>website</th><th>edit</th><th>increment purchase</th></tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="customer in allCustomers | orderBy: '-purchases'">
+			
+			<td>{{customer.name}}</td>
+			<td>{{customer.purchases}}</td>
+			<td><a ng-show="customer.url" href="{{customer.url}}">{{customer.url}}</a></td>
+			<td><a href="#/customers/{{customer._id}}">Edit</a></td>
+			<td><a href="#" ng-click="incrementPurchases(customer)">increment</a></td>
+		</tr>
+		</tbody>
+		<tfoot></tfoot>
+		</table>
+
+		
+		<span>
+			<a href="#/customers/">Add Customer</a>
+		</span>
+	
+	</script>
+	<script type="text/ng-template" id="/customers.html">
+		<div class="page-header">
+			<h1 ng-hide="customer">Add Customer</h1>
+			<h1 ng-show="customer">Update Customer</h1>
+		</div>
+		<form>
+			<div class="form-group"><input type="text" placeholder="name" ng-model="params.name" /></div>
+			<div class="form-group"><input type="text" placeholder="purchases" ng-model="params.purchases" /></div>
+			<div class="form-group"><input type="text" placeholder="website" ng-model="params.url" /></div>
+			
+			<button type="button" ng-hide="customer" ng-click="addCustomer()" />Add Customer</button>
+			<button type="button" ng-show="customer" ng-click="updateCustomer(customer)" />Update</button>
+			<button type="button" ng-show="customer" ng-click="deleteCustomer(customer)" />Delete</button>
+		</form>
+	<script>
+	
+</body>
+</html>
