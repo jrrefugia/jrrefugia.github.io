@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/projects/react/hor/static/css/main.a9c39b48.chunk.css",
-    "main.js": "/projects/react/hor/static/js/main.3e5a3e16.chunk.js",
-    "main.js.map": "/projects/react/hor/static/js/main.3e5a3e16.chunk.js.map",
+    "main.css": "/projects/react/hor/static/css/main.846faeba.chunk.css",
+    "main.js": "/projects/react/hor/static/js/main.fbbb95c6.chunk.js",
+    "main.js.map": "/projects/react/hor/static/js/main.fbbb95c6.chunk.js.map",
     "runtime~main.js": "/projects/react/hor/static/js/runtime~main.da66b862.js",
     "runtime~main.js.map": "/projects/react/hor/static/js/runtime~main.da66b862.js.map",
-    "static/js/2.dff35fa0.chunk.js": "/projects/react/hor/static/js/2.dff35fa0.chunk.js",
-    "static/js/2.dff35fa0.chunk.js.map": "/projects/react/hor/static/js/2.dff35fa0.chunk.js.map",
+    "static/js/2.8e19009a.chunk.js": "/projects/react/hor/static/js/2.8e19009a.chunk.js",
+    "static/js/2.8e19009a.chunk.js.map": "/projects/react/hor/static/js/2.8e19009a.chunk.js.map",
     "index.html": "/projects/react/hor/index.html",
-    "precache-manifest.141847d5230d31a947c154e9b2730777.js": "/projects/react/hor/precache-manifest.141847d5230d31a947c154e9b2730777.js",
+    "precache-manifest.b3a5ab13d7f2a616f8de96e03ea2981a.js": "/projects/react/hor/precache-manifest.b3a5ab13d7f2a616f8de96e03ea2981a.js",
     "service-worker.js": "/projects/react/hor/service-worker.js",
-    "static/css/main.a9c39b48.chunk.css.map": "/projects/react/hor/static/css/main.a9c39b48.chunk.css.map"
+    "static/css/main.846faeba.chunk.css.map": "/projects/react/hor/static/css/main.846faeba.chunk.css.map"
   }
 }
