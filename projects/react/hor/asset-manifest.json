@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/reactUSHR/static/css/main.ab3ec05d.chunk.css",
+    "main.js": "/reactUSHR/static/js/main.ef24867e.chunk.js",
+    "main.js.map": "/reactUSHR/static/js/main.ef24867e.chunk.js.map",
+    "runtime~main.js": "/reactUSHR/static/js/runtime~main.1cd76790.js",
+    "runtime~main.js.map": "/reactUSHR/static/js/runtime~main.1cd76790.js.map",
+    "static/js/2.8e19009a.chunk.js": "/reactUSHR/static/js/2.8e19009a.chunk.js",
+    "static/js/2.8e19009a.chunk.js.map": "/reactUSHR/static/js/2.8e19009a.chunk.js.map",
+    "index.html": "/reactUSHR/index.html",
+    "precache-manifest.af38a278c91c1aefc2dfebaec5db776e.js": "/reactUSHR/precache-manifest.af38a278c91c1aefc2dfebaec5db776e.js",
+    "service-worker.js": "/reactUSHR/service-worker.js",
+    "static/css/main.ab3ec05d.chunk.css.map": "/reactUSHR/static/css/main.ab3ec05d.chunk.css.map"
+  }
+}
