@@ -76,12 +76,14 @@ drawCircle('#eee', 100 / 100);
 drawCircle(options.percent > 0 ? "#77DD77" : "#FF6961", options.percent / 100);
 drawCircle('#000', .2 / 100); 
 }
-render("graph");
+renderGraph("graph");
 function changeGraphValue(){
-document.getElementById("graph").setAttribute("data-percent",document.getElementById("graph").value())
+document.getElementById("graph").setAttribute("data-percent",document.getElementById("input").value)
+document.getElementById("graph").innerHTML = ""
+renderGraph("graph")
 }
 </script>
-<input id="input" type="text" onclick="changeGraphValue()"></input>
+Value: <input id="input" type="text" /> <input type="button" onclick="changeGraphValue()" value="submit" />
 
 </body>
 </html>
