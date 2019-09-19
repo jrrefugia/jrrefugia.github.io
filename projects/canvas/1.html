@@ -42,7 +42,9 @@ input {
 
 
 <script>
-var el = document.getElementById('graph');
+
+function renderGraph(id){
+var el = document.getElementById(id);
 var options = {
     percent:  el.getAttribute('data-percent') || 0,
     size: el.getAttribute('data-size') || 180,
@@ -73,7 +75,13 @@ drawCircle('#eee', 100 / 100);
 
 drawCircle(options.percent > 0 ? "#77DD77" : "#FF6961", options.percent / 100);
 drawCircle('#000', .2 / 100); 
+}
+render("graph");
+function changeGraphValue(){
+document.getElementById("graph").setAttribute("data-percent",document.getElementById("graph").value())
+}
 </script>
+<input id="input" type="text" onclick="changeGraphValue()"></input>
 
 </body>
 </html>
