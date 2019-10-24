@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Jerie Refugia's BLS API Project</title>
+		<meta http-equiv="x-ua-compatible" content="IE=Edge" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="jquery.tablesorter.min.js"></script>
+		<script src="selectize.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+		<script src="datamaps.all.min.js"></script>
+		<script src="app.js"></script>
+		<link rel="stylesheet" type="text/css" href="selectize.css">
+		<link rel="stylesheet" type="text/css"href="table.css">
+		<link rel="stylesheet" type="text/css"href="app.css">
+	</head>
+	<body>
+		<form id="seriesBuilder">
+			<!-- 
+				the form used to have a lot more options that the user could specify, hence the name 'series builder'. 
+				i wanted to simplify the UI a bit so this functionality isn't there anymore, despite its' name.
+			-->
+			<input name="prefix" type="hidden" value= "OE" />
+			<input name="seasonalAdjustmentCode" type="hidden" value= "U" />
+			<input name="areaTypeCode" type="hidden"  value= "S" />
+			<input name="areaCode" type="hidden" value="|" />
+			<input name="industryCode" type="hidden" value= "000000" />
+			<select id="occupationCode" name="occupationCode"></select>
+			<input name="dataTypeCode" type="hidden" value= "04" />
+		</form>
+		<div id="loading" class="init">
+			<span><span class="arrow-up"></span></span>
+			<div>
+				How does your current salary compare<br />
+				with other salaries in other states?<br />
+				Hmm... I wonder.
+			</div>
+		</div>
+		<div id="chartContainer">
+			<div id="chart"></div>
+		</div>
+		<table id="outputTable" class="tablesorter table-fill">
+			<thead>
+				<tr>
+					<th>State
+						<div class="arrow-up"></div>
+						<div class="arrow-down"></div>
+					</th>
+					<th>Annual wage
+						<div class="arrow-up left"></div>
+						<div class="arrow-down left"></div>
+					</th>
+					<th>Hourly wage
+						<div class="arrow-up left"></div>
+						<div class="arrow-down left"></div>
+					</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="backToTop">
+			<span class="arrow-up"></span>
+			<span class="arrow-up background"></span>
+		</div>
+	</body>
+<html>

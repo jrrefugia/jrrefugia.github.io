@@ -1,0 +1,236 @@
+/* generic elements */
+.arrow-up, .arrow-down{
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  position:relative;
+  float:right;
+}
+.arrow-up {
+  border-bottom: 15px solid #1b1e24;
+  border-bottom-color: #1b1e24;
+  top:6px;
+}
+.arrow-down {
+  border-top: 15px solid #1b1e24;
+  border-top-color: #1b1e24;
+  top:-8px;
+  clear:both;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+body{
+	overflow-y: scroll;
+	padding-bottom:80px;
+}
+
+/* hidden elements */
+#occupationCode, #outputTable,#backToTop{
+	display:none;
+}
+#backToTop{
+	background-color:#1b1e24;
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	height:60px;
+	width:60px;
+	color:#fff;
+	padding:0;
+	text-align:center;
+	border-radius: 60px;
+	opacity: 0.33;
+    filter: alpha(opacity=33);
+	font-weight:bold;
+}
+#backToTop:hover{
+	opacity: 1;
+    filter: alpha(opacity=100);
+	cursor:pointer;
+}
+#backToTop span{
+	position:relative;
+	top:20px;
+}
+#backToTop span.arrow-up{
+	border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-bottom: 25px solid #E74C3C;
+    top: 14px;
+    right: 11px;
+}
+#backToTop span.arrow-up.background{
+    border-bottom: 25px solid #1b1e24;
+	top:-7px;
+}
+
+/* selectize */
+#occupationCode-selectized{
+	width:300px;
+}
+.selectize-control{
+	position:relative;
+	top:305px;
+	width:500px;
+	margin:0 auto;
+}
+.selectize-dropdown-content div[data-class="level0"]{
+	font-weight:bold;
+}
+.selectize-dropdown-content div[data-class="level0"], .level0{
+	padding-left:10px !important;
+}
+.selectize-dropdown-content div[data-class="level1"]{
+	padding-left:30px;
+}
+.selectize-dropdown-content div[data-class="level2"]{
+	padding-left:50px;
+}
+.selectize-dropdown-content div[data-class="level3"]{
+	padding-left:90px;
+}
+
+/* loading */
+#loading{
+	height: 300px; 
+	width:99%; 
+	background: url("loading.gif") no-repeat center;
+    position: absolute;
+    top: -90px;
+}
+#loading div{
+	border-radius: 40px;
+    background-color: #1b1e24;
+    color: white;
+    padding: 20px;
+    width: 430px;
+    
+}
+#loading > span,#loading div{
+	font-size:25px;
+	text-align:center;
+	top:86%;
+	left:1px;
+	position:relative;
+	margin: 0 auto;
+	display:block;
+}
+#loading > span{
+	width:30px;
+	top:68%;
+}
+#loading > span span.arrow-up{
+	border-color:transparent transparent #1b1e24 transparent;
+	border-left-width:18px;
+	border-right-width:18px;
+	border-bottom-width: 50px;
+	position:absolute;
+	left:-11px;
+}
+td.loading{
+	background-image: url("loading.gif") !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+}
+
+/* datamaps */
+#chart{
+	position: relative; 
+	width: 980px; 
+	height: 500px; 
+}
+#chart,.datamaps-legend{
+	margin:0 auto;
+}
+.datamaps-subunit:hover{
+	cursor:pointer;
+}
+.datamaps-legend{
+	width:936px;
+	position:relative;
+	left:-4px;
+	clear:both;
+	background-color:#fff;
+	padding:18px;
+	border-radius: 8px;
+	font-size: 17px !important;
+}
+.datamaps-legend h2{
+	margin:0px;
+	padding:0px;
+	text-align:center;
+}
+.datamaps-legend dl{
+	clear:both;
+	position:relative;
+}
+
+.datamaps-legend dd {
+	margin-right:42px !important;
+
+}
+.datamaps-legend dd.last{
+	margin-right:0px !important;
+}
+.hoverinfo{
+	width:auto;
+	padding:10px;
+	position:relative;
+	right:100px;
+	top:10px;
+}
+.hoverinfo p{
+	margin:0;
+	padding:0;
+	background-color:#ffffff;
+}
+
+/* tables */
+.table-fill tr a{
+	color: #666B85;
+
+}
+.table-fill tr:hover a{
+	color: #ffffff;
+
+}
+.table-fill tr.subArea td{
+	background-color:#F1f1f1;
+	color:#4E5066;
+}
+.table-fill tr.subArea td:first-child{
+	padding-left:40px;
+	
+}
+.table-fill tr.expanded td, .table-fill tr.expanded td a{
+	background-color:#E74C3C;
+	color:#fff;
+}
+
+.table-fill tr.expanded:hover td, .table-fill tr.expanded:hover td a {
+  background-color:#4E5066;
+}
+.tablesorter-headerDesc .arrow-down{
+border-top-color: #E74C3C;
+}
+.tablesorter-headerDesc .arrow-up{
+border-bottom-color: transparent;
+}
+.tablesorter-headerAsc .arrow-down{
+border-top-color: transparent;
+}
+.tablesorter-headerAsc .arrow-up{
+border-bottom-color: #E74C3C;
+}
+.expandSubArea{
+	text-transform: uppercase;
+    font-weight: bold;
+}
+#outputTable thead{
+	cursor: pointer;
+}
