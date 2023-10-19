@@ -14,7 +14,7 @@ $(document).ready(function() {
     var nationalAverageTemplate = "OEUN0000000000000|03";
     var maxSeriesPerRequest = 50; //based on API v2
 	var year = '2018';
-	var registrationKey = '8b372d1521bb4dc98a20e5bdee483a0e';
+	var registrationKey = '7b6179aec7a3451fbbc6633c24233a8e';
 	
     // build area object. pulling local copy of http://download.bls.gov/pub/time.series/oe/oe.area 
     // ideally should pull from bls site to get most recent copy.
